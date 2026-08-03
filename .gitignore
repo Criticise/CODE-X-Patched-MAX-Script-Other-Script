@@ -1,0 +1,4 @@
+# Release archive and Python runtime files are not source-tree content.
+*.7z
+__pycache__/
+*.pyc
