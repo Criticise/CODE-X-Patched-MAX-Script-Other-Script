@@ -16,6 +16,41 @@ files directly; the matching archive is available from the Release page.
 | `codex_re6_render_everything.py` | RE6 `BH6.exe` 运行时 Render Everything 开关。先核验目标进程和指令签名，再只修改内存，不写入 EXE 文件。 | Runtime-only Render Everything switch for RE6 `BH6.exe`. It verifies the target process and instruction signature before changing memory only; it does not write the EXE file. |
 | `codex_re6_render_everything_exe_patcher.py` | RE6 `BH6.exe` Render Everything 永久补丁工具。通过签名定位目标指令，可检测状态、写入补丁并恢复原始字节。 | Signature-checked permanent Render Everything patcher for RE6 `BH6.exe`. It can inspect state, apply the patch, and restore the original bytes. |
 
+## RE6 Render Everything Only / 仅提供 RE6 Render Everything
+
+`codex_re6_render_everything.py` 和
+`codex_re6_render_everything_exe_patcher.py` 是为“不想开启 Ultimate Trainer、但只需要
+解决 RE6 模型可见性/渲染问题”的用户准备的。前者只在运行期间修改目标进程内存，关闭
+游戏后失效；后者为已经核验过签名的 EXE 提供可检查、可恢复的永久补丁。
+
+本地实测中，Ultimate Trainer 会影响一部分主线可操作对象的 Melee 近身伤害判定；例如，
+踩踏敌人身体时可能不产生伤害。该现象是特定测试环境中的观察结果，不代表所有版本、
+所有场景都会发生，但足以说明“只为模型显示而开启完整修改器”并不总是合适。
+
+本仓库因此只提供两种 Render Everything 路线：运行时内存工具或可恢复的 EXE 补丁，
+不提供完整修改器功能。对于缺失资源后的稳定加载/防闪退需求，本地测试可由
+Wilsonso's Shader Pack 提供与 Missing Files Fix 类似的支持；它不替代 Render Everything
+本身的模型可见性作用。
+
+`codex_re6_render_everything.py` and
+`codex_re6_render_everything_exe_patcher.py` are for users who do not want to
+enable Ultimate Trainer and only need to address RE6 model visibility/rendering.
+The first changes target-process memory for the current run only; the second is
+an inspectable, reversible permanent patch for an EXE with a verified signature.
+
+In local testing, Ultimate Trainer affected Melee close-range damage detection
+for some main-story playable entities. One observed case was that stomping an
+enemy body produced no damage. This is an observation from a specific test
+environment, not a claim that every version or scene behaves this way. It is
+enough to show why enabling a full trainer solely for model visibility is not
+always appropriate.
+
+For that reason, this repository supplies only the two Render Everything paths:
+a runtime memory tool and a reversible EXE patcher. It does not provide general
+trainer features. In the local test setup, Wilsonso's Shader Pack can provide
+Missing Files Fix-like support for resilient loading when a resource is absent;
+it does not replace Render Everything for model visibility.
+
 ## Notes / 说明
 
 - The `.ms` files are intended for Autodesk 3ds Max. Their original tool
