@@ -32,6 +32,11 @@ files directly; the matching archive is available from the Release page.
 Wilsonso's Shader Pack 提供与 Missing Files Fix 类似的支持；它不替代 Render Everything
 本身的模型可见性作用。
 
+Wilsonso's Shader Pack 并不总能解决 Missing File 弹窗、加载报错或游戏闪退。若游戏仍然
+闪退，先检查 MOD 包是否完整并修复实际缺失资源；在当前工具条件下，Ultimate Trainer -
+Missing Files Fix 仍是资源缺失问题的最终兜底。本仓库目前尚未提供由 AI 制作的
+Missing Files Fix 类补丁脚本。
+
 `codex_re6_render_everything.py` and
 `codex_re6_render_everything_exe_patcher.py` are for users who do not want to
 enable Ultimate Trainer and only need to address RE6 model visibility/rendering.
@@ -50,6 +55,13 @@ a runtime memory tool and a reversible EXE patcher. It does not provide general
 trainer features. In the local test setup, Wilsonso's Shader Pack can provide
 Missing Files Fix-like support for resilient loading when a resource is absent;
 it does not replace Render Everything for model visibility.
+
+Wilsonso's Shader Pack does not always resolve Missing File popups, loading
+errors, or game crashes. If the game still crashes, first check that the MOD
+package is complete and repair the actual missing resource. Under the current
+tooling, Ultimate Trainer - Missing Files Fix remains the final fallback for
+resource-missing failures. This repository does not yet provide an AI-built
+Missing Files Fix-like patch script.
 
 ## Notes / 说明
 
